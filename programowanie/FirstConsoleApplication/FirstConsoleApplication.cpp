@@ -1,12 +1,20 @@
 ﻿
-/ FirstConsoleApplication.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// FirstConsoleApplication.cpp : This file contains the 'main' function.Program execution begins and ends there.
 //
 
 #include <iostream>
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	std::cout << "Hello World!\n";//stała łańcóchowa
+	std::cout << "Hello World!\n";
+	std::cout << "x";//stała znakowa
+	std::cout << "\n";//stała znakowa
+	std::cout << 59;//stała całkowitoliczbowa
+	std::cout << "\n";//stała znakowa
+	std::cout << -2.5; //stała rzyeczywista
+	std::cout << " pierwsza liczba " << 254 << " kolejny tekst";
+
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
