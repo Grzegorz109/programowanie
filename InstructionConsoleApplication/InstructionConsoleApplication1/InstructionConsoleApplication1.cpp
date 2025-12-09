@@ -1,0 +1,404 @@
+﻿#include <iostream>
+
+/*
+
+DRY - don't repeat yourself
+KISS - kept it simple stiupid
+
+Operatry warunkowe:
+>		- większy
+<		- mniejszy
+>=		- wiekszy bądź równy
+<=		- mniejszy bądź równy
+==		- równy
+!=		- różny
+
+Operatory logiczne:
+&&	-	AND
+||	-	OR
+!	-   NOT
+
+a	b		a && b		a || b		!a
+F	F		  F			   F		 T
+F	T		  F			   T		 T
+T	F		  F			   T		 F
+T	T	      T			   T		 F
+
+a && b || c && d
+
+*/
+
+/*
+Napisz program, który poprosi użytkownika o podanie masy ciała (w kilogramach) i wzrostu (w metrach).
+Na  podstawie tych danych oblicz wskaźnik BMI (Body Mass Index) i wyświetl odpowiedni komunikat informujący o stanie zdrowia.
+poniżej 16 - wygłodzenie
+16 - 16.99 - wychudzenie
+17 - 18.49 - niedowagę
+18.5 - 24.99 - wagę prawidłową
+25.0 - 29.9 - nadwagę
+30.0 - 34.99 - I stopień otyłości
+35.0 - 39.99 - II stopień otyłości
+powyżej 40.0 - otyłość skrajną
+
+Wzór:
+
+BMI = masa/wysokość^2
+
+*. Napisz program, który poprosi użytkownika o podanie długości trzech odcinków i sprawdzi, czy można zbudować z nich trójkąt. Wyświetl odpowiedni komunikat.
+
+*/
+
+//Napisz program, który wyświetli informacje czy liczba jest dodatnia czy nie.
+void task1()
+{
+	int number;
+	std::cout << "Podaj liczbę całkowitą:\n";
+	std::cin >> number;
+
+	if (number > 0)
+		std::cout << "Podana liczba jest dodatnia\n";
+
+	if (number < 0)
+		std::cout << "Podana liczba jest ujemna\n";
+
+	if (number == 0)
+		std::cout << "Podana liczba nie jest dodatnia ani ujemna\n";
+
+	std::cout << "Koniec programu\n";
+}
+
+//Napisz program, który wyświetli informacje czy liczba jest parzysta czy nieparzysta.
+void task2()
+{
+	int number;
+	std::cout << "Podaj liczbę całkowitą:\n";
+	std::cin >> number;
+
+	int reminderOfDivision;
+	reminderOfDivision = number % 2;
+
+	if (reminderOfDivision == 0)
+		std::cout << "Podana liczba jest parzysta\n";
+
+	if (reminderOfDivision == 0) // == 1 
+		std::cout << "Podana liczba jest nieparzysta\n";
+
+	//--------------------------------------------------------
+	if (reminderOfDivision == 0)
+		std::cout << "Podana liczba jest parzysta\n";
+	else
+		std::cout << "Podana liczba jest nieparzysta\n";
+}
+
+//Napisz program, który wyświetli informacje czy liczba jest z zakresu <1 ; 10).
+void task3()
+{
+	int number;
+	std::cout << "Podaj liczbę całkowitą:\n";
+	std::cin >> number;
+
+	//wersja 1
+	if (number >= 1)
+	{
+		if (number < 10)
+			std::cout << "Liczba jest w zakresie <1;10)\n";
+		else
+			std::cout << "Liczba nie jest w zakresie <1;10)\n";
+	}
+	else
+	{
+		std::cout << "Liczba nie jest w zakresie <1;10)\n";
+	}
+
+	//wersja 2
+	if (number >= 1)
+		if (number < 10)
+			std::cout << "Liczba jest w zakresie <1;10)\n";
+		else
+			std::cout << "Liczba nie jest w zakresie <1;10)\n";
+	else
+		std::cout << "Liczba nie jest w zakresie <1;10)\n";
+
+	//wersja 3
+	if (number >= 1 && number < 10)
+		std::cout << "Liczba jest w zakresie <1;10)\n";
+	else
+		std::cout << "Liczba nie jest w zakresie <1;10)\n";
+
+	//wersja 4
+	if (number < 1 || number >= 10)
+		std::cout << "Liczba nie jest w zakresie <1;10)\n";
+	else
+		std::cout << "Liczba jest w zakresie <1;10)\n";
+
+	//wersja 5
+	if (!(number >= 1 && number < 10))
+		std::cout << "Liczba nie jest w zakresie <1;10)\n";
+	else
+		std::cout << "Liczba jest w zakresie <1;10)\n";
+
+
+}
+
+//Napisz program, który wykona dzielenie dwóch liczb
+void task4()
+{
+	int dividend, divisor;
+	std::cout << "Podaj dzielnik:\n";
+	std::cin >> dividend;
+	std::cout << "Podaj dzielną:\n";
+	std::cin >> divisor;
+
+	if (divisor != 0)
+	{
+		int quoitent = dividend / divisor;
+		std::cout << "Wynik dzielenia " << quoitent << "\n";
+	}
+	else
+		std::cout << "Dzzielenie przez zero!!!\n";
+}
+
+//Napisz program, który poprosi użytkownika o podanie dwóch liczb całkowitych i sprawdzi, czy są one równe. Wyświetl odpowiedni komunikat.
+void task5()
+{
+	int firstNumber, secondNumber;
+	std::cout << "Podaj pierwszą liczbę:\n";
+	std::cin >> firstNumber;
+	std::cout << "Podaj drugą liczbę: ";
+	std::cin >> secondNumber;
+
+	if (firstNumber == secondNumber)
+		std::cout << "Liczby są równe.\n";
+	else
+		std::cout << "Liczby nie są równe.\n";
+}
+
+//Napisz program, który poprosi użytkownika o podanie wieku i sprawdzi, czy osoba jest pełnoletnia. Wyświetl odpowiedni komunikat.
+void task6()
+{
+	unsigned short age;
+	std::cout << "Podaj wiek:\n";
+	std::cin >> age;
+
+	if (age >= 18)
+		std::cout << "Jesteś pełnoletni.\n";
+	else
+		std::cout << "Jesteś niepełnoletni.\n";
+}
+
+//Napisz program, który poprosi użytkownika o podanie liczby całkowitej i obliczy jej wartość bezwzględną. Wyświetl wynik.
+void task7()
+{
+	int number;
+	std::cout << "Podaj liczbę:\n";
+	std::cin >> number;
+
+	if (number < 0)
+	{
+		//number = number * (-1);
+		//number *= -1;
+		number = -number;
+	}
+
+	std::cout << "Twoja liczba jako dodatnia: " << number << "\n";
+}
+
+//Napisz program, który poprosi użytkownika o podanie roku i sprawdzi, czy jest to rok przestępny. Wyświetl odpowiedni komunikat.
+void task8()
+{
+	short year;
+	std::cout << "Podaj rok:\n";
+	std::cin >> year;
+
+	if (year % 4 == 0 && year % 100 != 0
+		|| year % 400 == 0)
+		std::cout << "Rok jest przestępny\n";
+	else
+		std::cout << "Rok nie jest przestępny\n";
+}
+
+//Napisz program, który poprosi użytkownika o podanie liczby całkowitej i sprawdzi,
+// czy jest ona podzielna zarówno przez 3, jak i przez 5. Wyświetl odpowiedni komunikat.
+void task9()
+{
+	int number;
+	std::cout << "Podaj liczbę:\n";
+	std::cin >> number;
+
+	if (number % 3 == 0 && number % 5 == 0)
+		std::cout << "Liczba jest podzielna\n";
+}
+
+//Program sprawdzający czy podana data jest poprawna
+void task10()
+{
+	int day, month, year;
+	std::cout << "Podaj dzień\n";
+	std::cin >> day;
+	std::cout << "Podaj miesiąc\n";
+	std::cin >> month;
+	std::cout << "Podaj rok\n";
+	std::cin >> year;
+
+	if (day >= 1 && day <= 31
+		&& month >= 1 && month <= 12
+		&& year != 0
+		&& ((month == 4 || month == 6 || month == 9 || month == 11) && day != 31)
+		&& month == 2 && (day <= 28
+			|| day == 29 && (year % 4 == 0 && year % 100 != 0 || year % 400 == 0))
+		)
+	{
+		std::cout << "Data " << day << "." << month << "." << year << " jest poprawna\n";
+	}
+	else
+	{
+		std::cout << "Data nie jest poprawna";
+	}
+}
+
+//Napisz program, który poprosi użytkownika o podanie liczby od 1 do 7 
+// i wyświetli odpowiadający mu dzień tygodnia.
+void task11()
+{
+	int dayOfWeek;
+	std::cout << "Podaj numer dnia tygodnia (1-7)\n";
+	std::cin >> dayOfWeek;
+
+	if (dayOfWeek == 1)
+		std::cout << "Poniedziałek\n";
+	else if (dayOfWeek == 2)
+		std::cout << "Wtorek\n";
+	else if (dayOfWeek == 3)
+		std::cout << "Środa\n";
+	else if (dayOfWeek == 4)
+		std::cout << "Czwartek\n";
+	else if (dayOfWeek == 5)
+		std::cout << "Piątek\n";
+	else if (dayOfWeek == 6)
+		std::cout << "Sobota\n";
+	else if (dayOfWeek == 7 || dayOfWeek == 0)
+		std::cout << "Niedziela\n";
+	else
+		std::cout << "Dzień niepoprawny\n";
+
+	switch (dayOfWeek)
+	{
+	case 1:
+		std::cout << "Poniedziałek\n";
+		break;
+	case 2:
+		std::cout << "Wtorek\n";
+		break;
+	case 3:
+		std::cout << "Środa\n";
+		break;
+	case 4:
+		std::cout << "Czwartek\n";
+		break;
+	case 5:
+		std::cout << "Piątek\n";
+		break;
+	case 6:
+		std::cout << "Sobota\n";
+		break;
+	case 0:
+	case 7:
+		std::cout << "Niedziela\n";
+		break;
+	default:
+		std::cout << "Dzień niepoprawny\n";
+	}
+}
+
+//Napisz program, który wyświetli największą liczbę ze zbioru jednoelementowego.
+void task12()
+{
+	int firstNumber;
+	std::cout << "Podaj liczbę\n";
+	std::cin >> firstNumber;
+
+	int max;
+
+	max = firstNumber;
+
+	std::cout << "Największa wartość to: " << max << "\n";
+}
+
+//Napisz program, który wyświetli największą liczbę ze zbioru dwuelementowego.
+void task13()
+{
+	int firstNumber, secondNumber;
+	std::cout << "Podaj liczbę\n";
+	std::cin >> firstNumber;
+	std::cout << "Podaj liczbę\n";
+	std::cin >> secondNumber;
+
+	int max;
+
+	if (secondNumber > firstNumber)
+		max = secondNumber;
+	else
+		max = firstNumber;
+
+	std::cout << "Największa wartość to: " << max << "\n";
+}
+
+//Napisz program, który wyświetli największą liczbę ze zbioru trójelementowego.
+void task14()
+{
+	int firstNumber, secondNumber, thirdNumber;
+	std::cout << "Podaj liczbę\n";
+	std::cin >> firstNumber;
+	std::cout << "Podaj liczbę\n";
+	std::cin >> secondNumber;
+	std::cout << "Podaj liczbę\n";
+	std::cin >> thirdNumber;
+
+	int max;
+
+	if (thirdNumber > secondNumber && thirdNumber > firstNumber)
+		max = thirdNumber;
+	else if (secondNumber > firstNumber)
+		max = secondNumber;
+	else
+		max = firstNumber;
+
+	std::cout << "Największa wartość to: " << max << "\n";
+}
+
+//Napisz program, który wyświetli największą liczbę ze zbioru czteroelementowego.
+void task15()
+{
+	int firstNumber, secondNumber, thirdNumber, fourthNumber;
+	std::cout << "Podaj liczbę\n";
+	std::cin >> firstNumber;
+	std::cout << "Podaj liczbę\n";
+	std::cin >> secondNumber;
+	std::cout << "Podaj liczbę\n";
+	std::cin >> thirdNumber;
+	std::cout << "Podaj liczbę\n";
+	std::cin >> fourthNumber;
+
+	int max;
+
+	if (fourthNumber > thirdNumber
+		&& fourthNumber > secondNumber
+		&& fourthNumber > firstNumber)
+		max = fourthNumber;
+	else if (thirdNumber > secondNumber
+		&& thirdNumber > firstNumber)
+		max = thirdNumber;
+	else if (secondNumber > firstNumber)
+		max = secondNumber;
+	else
+		max = firstNumber;
+
+	std::cout << "Największa wartość to: " << max << "\n";
+}
+
+int main()
+{
+	setlocale(LC_CTYPE, "polish");
+
+	task13();
+}
