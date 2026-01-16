@@ -10,19 +10,16 @@
         <VerticalStackLayout>
             <Label Text="gra"
                    SemanticProperties.HeadingLevel="Level1
-                   "/>
-            <Button Text="rzuc kosca"></Button>
+                   "
+                   TextColor="Violet"/>
+            <Button Text="rzuc kosca" BackgroundColor="Brown"></Button>
             <FlexLayout
                 Wrap="Wrap">
-               
-                    
+                <Image Source="question.jpg"/>
                             <Image Source="question.jpg"/>
                             <Image Source="question.jpg"/>
                             <Image Source="question.jpg"/>
                             <Image Source="question.jpg"/>
-                            <Image Source="question.jpg"/>
-                      
-               
             </FlexLayout>
         </VerticalStackLayout>
 
