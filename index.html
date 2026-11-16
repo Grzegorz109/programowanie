@@ -1,141 +1,163 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kielce – miasto, które warto zobaczyć PRACA ROBIONA PRZEZ AI</title>
-    <link rel="stylesheet" href="styl.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GAMEZONE – Festiwal Gier Komputerowych</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <div class="container">
-        <!-- Nagłówek strony -->
-        <header>
-            <h1>KIELCE – MIASTO, KTÓRE WARTO ZOBACZYĆ. 
-                PRACA ROBIONA PRZZ AI</h1>
-            <p class="podtytul">Poznaj miejsca, które warto odwiedzić w stolicy województwa świętokrzyskiego.</p>
-        </header>
-
-        <!-- Menu nawigacyjne -->
-        <nav>
-            <ul>
-                <li><a href="#glowna">Strona główna</a></li>
-                <li><a href="#atrakcje">Atrakcje</a></li>
-                <li><a href="#o-kielcach">O Kielcach</a></li>
-                <li><a href="#kontakt">Kontakt</a></li>
-            </ul>
-        </nav>
-
-        <!-- Sekcja Strona Główna -->
-        <section id="glowna" class="wstep">
-            <h2>Witaj w Kielcach!</h2>
-            <p>Kielce to miasto położone w sercu Gór Świętokrzyskich. Można tu znaleźć zarówno ciekawe zabytki, jak i wyjątkowe miejsca przyrodnicze. Zobacz, które atrakcje warto odwiedzić podczas spaceru po mieście.</p>
-        </section>
-
-        <!-- Sekcja Atrakcje -->
-        <section id="atrakcje">
-            <h2>Najciekawsze miejsca</h2>
-            <div class="atrakcje-grid">
-                
-                <article class="karta-atrakcji">
-                    <img src="kadzielnia.jpg" alt="Rezerwat Kadzielnia">
-                    <div class="karta-tresc">
-                        <h3>Rezerwat Kadzielnia</h3>
-                        <p>Jedno z najbardziej charakterystycznych miejsc w Kielcach. Dawny kamieniołom zachwyca wapiennymi skałami, zielenią oraz malowniczym widokiem.</p>
-                        <p><strong>Dlaczego warto odwiedzić:</strong> Oferuje przepiękne trasy spacerowe, podziemną trasę turystyczną w jaskiniach oraz słynny amfiteatr.</p>
-                    </div>
-                </article>
-
-                <article class="karta-atrakcji">
-                    <img src="palac.jpg" alt="Pałac Biskupów Krakowskich">
-                    <div class="karta-tresc">
-                        <h3>Pałac Biskupów Krakowskich</h3>
-                        <p>Barokowa rezydencja będąca jednym z najważniejszych zabytków Kielc. Obecnie mieści się tutaj Muzeum Narodowe.</p>
-                        <p><strong>Dlaczego warto odwiedzić:</strong> Wspaniale zachowana architektura z XVII wieku oraz unikalny Ogród Włoski tuż za pałacem.</p>
-                    </div>
-                </article>
-
-                <article class="karta-atrakcji">
-                    <img src="park.jpg" alt="Park Miejski im. Stanisława Staszica">
-                    <div class="karta-tresc">
-                        <h3>Park Miejski im. Stanisława Staszica</h3>
-                        <p>Jeden z najstarszych parków miejskich w Polsce, położony w samym centrum miasta u stóp Wzgórza Zamkowego.</p>
-                        <p><strong>Dlaczego warto odwiedzić:</strong> Stare drzewostany, malownicze stawy z ptactwem oraz idealne miejsce na wyciszenie i odpoczynek.</p>
-                    </div>
-                </article>
-
-                <article class="karta-atrakcji">
-                    <img src="wzgorze.jpg" alt="Wzgórze Zamkowe">
-                    <div class="karta-tresc">
-                        <h3>Wzgórze Zamkowe</h3>
-                        <p>Zabytkowy obszar w centrum Kielc, stanowiący historyczny i kulturalny punkt miasta z wieloma ważnymi obiektami.</p>
-                        <p><strong>Dlaczego warto odwiedzić:</strong> Miejsce łączące historię, sztukę (Ośrodek Myśli Patriotycznej i Ośrodek Teatralny) oraz piękny punkt widokowy.</p>
-                    </div>
-                </article>
-
-            </div>
-
-            <!-- Zadanie 1 - Wybór atrakcji -->
-            <div class="panel-js">
-                <h3>Sprawdź informacje o atrakcji</h3>
-                <form id="form-atrakcja" onsubmit="return false;">
-                    <label for="atrakcja">Wybierz atrakcję:</label>
-                    <select id="atrakcja">
-                        <option value="Kadzielnia">Kadzielnia</option>
-                        <option value="Pałac Biskupów Krakowskich">Pałac Biskupów Krakowskich</option>
-                        <option value="Park Miejski">Park Miejski</option>
-                        <option value="Wzgórze Zamkowe">Wzgórze Zamkowe</option>
-                    </select>
-                    <button type="button" id="btn-sprawdz">Sprawdź</button>
-                </form>
-                <div id="wynik-sprawdz" class="komunikat-js"></div>
-            </div>
-
-            <!-- Zadanie 2 - Licznik atrakcji -->
-            <div class="panel-js">
-                <h3>Zaznacz miejsca, które już odwiedziłeś:</h3>
-                <div class="checkboxy-atrakcji">
-                    <label><input type="checkbox" class="chk-atrakcja" value="Kadzielnia"> Kadzielnia</label><br>
-                    <label><input type="checkbox" class="chk-atrakcja" value="Pałac Biskupów Krakowskich"> Pałac Biskupów Krakowskich</label><br>
-                    <label><input type="checkbox" class="chk-atrakcja" value="Park Miejski"> Park Miejski</label><br>
-                    <label><input type="checkbox" class="chk-atrakcja" value="Wzgórze Zamkowe"> Wzgórze Zamkowe</label>
-                </div>
-                <button type="button" id="btn-licznik">Ile atrakcji pozostało do odwiedzenia?</button>
-                <div id="wynik-licznik" class="komunikat-js"></div>
-            </div>
-        </section>
-
-        <!-- Sekcja z Listą zalet -->
-        <section class="sekcja-lista">
-            <h3>Kielce warto odwiedzić ze względu na:</h3>
-            <ul>
-                <li>Zabytki architektury i bogatą historię</li>
-                <li>Wyjątkową przyrodę oraz geologiczne rezerwaty</li>
-                <li>Liczne wydarzenia kulturalne i festiwale</li>
-                <li>Atrakcyjne szlaki turystyczne i rowerowe</li>
-            </ul>
-        </section>
-
-        <!-- Sekcja O Kielcach -->
-        <section id="o-kielcach">
-            <h2>O Kielcach</h2>
-            <p>Kielce to stolica i największe miasto województwa świętokrzyskiego, stanowiące regionalne centrum gospodarcze, naukowe oraz kulturalne. Położone nad rzeką Silnicą, w malowniczej kotlinie Gór Świętokrzyskich, zachwycają unikalną w skali europejskiej geologią. W granicach administracyjnych miasta znajduje się aż pięć rezerwatów przyrody, co czyni Kielce wyjątkowym miejscem na mapie Polski.</p>
-            <p>Dzieje miasta sięgają średniowiecza, a przez całe stulecia Kielce stanowiły własność biskupów krakowskich, co wywarło ogromny wpływ na architekturę i układ urbanistyczny centrum. Dziś to nowoczesne miasto, które doskonale łączy historyczne dziedzictwo z otwarciem na turystykę, rekreację oraz dynamiczny rozwój infrastruktury miejskiej.</p>
-        </section>
-
-        <!-- Dodatkowe działanie JavaScript (Ciekawostki) -->
-        <section class="panel-js">
-            <h2>Poznaj ciekawostkę o Kielcach</h2>
-            <button type="button" id="btn-ciekawostka">Pokaż ciekawostkę</button>
-            <div id="wynik-ciekawostka" class="komunikat-js">Kliknij przycisk, aby poznać ciekawostkę!</div>
-        </section>
-
-        <!-- Stopka strony -->
-        <footer id="kontakt">
-            <p>Stronę wykonał: Jan Kowalski | 2026</p>
-        </footer>
+  <header>
+    <div class="marka">
+      <img src="logo.png" alt="Logo GAMEZONE" class="logo">
+      <div>
+        <span class="nazwa-firmy">GAMEZONE</span>
+        <p class="podtytul">Festiwal Gier Komputerowych</p>
+      </div>
     </div>
 
-    <script src="skrypt.js"></script>
+    <nav aria-label="Menu główne">
+      <ul>
+        <li><a href="#start">STRONA GŁÓWNA</a></li>
+        <li><a href="#o-festiwalu">O FESTIWALU</a></li>
+        <li><a href="#atrakcje">ATRAKCJE</a></li>
+        <li><a href="#zapisy">ZAPISY</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="start" class="sekcja-glowna">
+      <div class="hero-tekst">
+        <h1>ZAGRAJ. RYWALIZUJ. WYGRAJ.</h1>
+        <p>Jeden dzień, setki graczy i najpopularniejsze gry w jednym miejscu.</p>
+        <div class="przyciski-grupa">
+          <button type="button" id="btn-data">SPRAWDŹ DATĘ</button>
+          <button type="button" id="btn-licznik">POKAŻ LICZNIK</button>
+        </div>
+        <p id="komunikat-data" class="komunikat"></p>
+        <p id="komunikat-licznik" class="komunikat"></p>
+      </div>
+      <div class="hero-obraz">
+        <img src="gry.jpg" alt="Stanowiska z grami komputerowymi">
+      </div>
+    </section>
+
+    <section id="o-festiwalu" class="sekcja">
+      <h2>O FESTIWALU</h2>
+      <p class="opis-sekcji">
+        GameZone to jednodniowe wydarzenie dla wszystkich osób zainteresowanych grami komputerowymi. Uczestnicy mogą wziąć udział w turniejach, konkursach oraz przetestować najnowsze technologie związane z grami.
+      </p>
+
+      <div class="bloki-siatka">
+        <article class="blok">
+          <h3>TURNIEJE</h3>
+          <p>Turnieje indywidualne i drużynowe.</p>
+        </article>
+        <article class="blok">
+          <h3>STREFA VR</h3>
+          <p>Możliwość przetestowania gier wykorzystujących rzeczywistość wirtualną.</p>
+        </article>
+        <article class="blok">
+          <h3>STREFA RETRO</h3>
+          <p>Klasyczne konsole i gry znane z poprzednich dekad.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="atrakcje" class="sekcja">
+      <h2>ATRAKCJE</h2>
+      <div class="tabela-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Godzina</th>
+              <th>Atrakcja</th>
+              <th>Miejsce</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>10:00</td>
+              <td>Otwarcie festiwalu</td>
+              <td>Scena główna</td>
+            </tr>
+            <tr>
+              <td>11:00</td>
+              <td>Turniej FIFA</td>
+              <td>Strefa turniejowa</td>
+            </tr>
+            <tr>
+              <td>13:00</td>
+              <td>Konkurs wiedzy o grach</td>
+              <td>Scena główna</td>
+            </tr>
+            <tr>
+              <td>15:00</td>
+              <td>Turniej CS</td>
+              <td>Strefa turniejowa</td>
+            </tr>
+            <tr>
+              <td>17:00</td>
+              <td>Finał turniejów</td>
+              <td>Scena główna</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <figure class="grafika-gracze">
+        <img src="pad.jpg" alt="Kontroler do gier na stanowisku graczy">
+        <figcaption>Strefa dla graczy</figcaption>
+      </figure>
+    </section>
+
+    <section id="zapisy" class="sekcja">
+      <h2>ZAPISZ SIĘ NA FESTIWAL</h2>
+      <form id="formularz-zapisow" novalidate>
+        <div class="pole">
+          <label for="imie-nazwisko">Imię i nazwisko</label>
+          <input type="text" id="imie-nazwisko" name="imieNazwisko" required>
+        </div>
+
+        <div class="pole">
+          <label for="email">E-mail</label>
+          <input type="text" id="email" name="email" required>
+        </div>
+
+        <div class="pole">
+          <label for="turniej">Wybierz turniej</label>
+          <select id="turniej" name="turniej" required>
+            <option value="">-- Wybierz turniej --</option>
+            <option value="FIFA">FIFA</option>
+            <option value="CS">CS</option>
+            <option value="Tekken">Tekken</option>
+            <option value="Mario Kart">Mario Kart</option>
+          </select>
+        </div>
+
+        <div class="pole">
+          <label for="wiek">Wiek</label>
+          <input type="number" id="wiek" name="wiek" min="1" max="120" required>
+        </div>
+
+        <div class="pole-checkbox">
+          <input type="checkbox" id="zgoda" name="zgoda" required>
+          <label for="zgoda">Zgadzam się na udział w wydarzeniu.</label>
+        </div>
+
+        <button type="submit" id="btn-zapisz">ZAPISZ MNIE</button>
+      </form>
+
+      <p id="komunikat-formularz" class="komunikat"></p>
+      <div id="dane-uczestnika" class="dane-uczestnika"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 GAMEZONE – Festiwal Gier Komputerowych. Wszelkie prawa zastrzeżone.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
